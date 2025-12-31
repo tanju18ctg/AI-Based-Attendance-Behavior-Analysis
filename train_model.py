@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 # Load dataset
-data = pd.read_csv("dataset.csv")
+data = pd.read_csv("data_set.csv")
 
 # Input features (X) and output label (y)
 X = data[["Attendance", "Assignment", "Participation"]]
