@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Student Risk Analysis</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+<div class="container">
+    <h2>AI-Based Attendance & Behavior Analysis</h2>
+
+    <form method="POST">
+        <input type="number" name="attendance" placeholder="Attendance (%)" required>
+        <input type="number" name="assignment" placeholder="Assignment (%)" required>
+        <input type="number" name="participation" placeholder="Participation (1-10)" required>
+        <button type="submit">Analyze Risk</button>
+    </form>
+
+    {% if result %}
+        <h3>Predicted Risk Level: {{ result }}</h3>
+        {% if reasons %}
+            <ul>
+                {% for r in reasons %}
+                    <li>{{ r }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endif %}
+</div>
+</body>
+</html>
